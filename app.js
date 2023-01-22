@@ -4,8 +4,8 @@ const path=require('path')
 const mongoose = require('mongoose');
 const multer=require('multer')
 const {v4:uuid4 } = require('uuid');
-const helmet=require('helmet')
-const compression=require('compression')
+const helmet= require('helmet')
+const compression =require('compression')
 
 
 const feedRoutes=require('./routes/contacts')
@@ -56,7 +56,7 @@ app.use((req, res, next) => {
 app.use('/book', feedRoutes);
 app.use('/auth',authRoutes)
 
-app.use(helmet())
+// app.use(helmet())
 app.use(compression())
 
 
@@ -74,6 +74,7 @@ app.use(express.static(path.join(__dirname,'public')))
 app.get('/*',(req,res)=>{
   res.sendFile(path.join(__dirname,'public','index.html'))
 })
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.wkaijzr.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
