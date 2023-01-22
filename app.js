@@ -6,15 +6,14 @@ const multer=require('multer')
 const {v4:uuid4 } = require('uuid');
 const helmet= require('helmet')
 const compression =require('compression')
-
-
 const feedRoutes=require('./routes/contacts')
 const authRoutes=require('./routes/auth')
+const cors=require('cors')
 
 require('dotenv').config();
 
 const app = express();
-
+app.use(cors())
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
       cb(null, 'images');
