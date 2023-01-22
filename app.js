@@ -39,7 +39,6 @@ const fileFilter=(req,file,cb)=>{
 app.use(bodyParser.json());
 app.use(multer({storage:storage,fileFilter:fileFilter}).single('image'))
 app.use('/images',express.static(path.join(__dirname,'images')))
-app.use(express.static(path.join(__dirname+'/public')))
 
 
 app.use((req, res, next) => {
@@ -51,6 +50,8 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+
 
 app.use('/book', feedRoutes);
 app.use('/auth',authRoutes)
@@ -68,6 +69,10 @@ app.use((error,req,res,next)=>{
     message:message,
     data:data
   })
+})
+app.use(express.static(path.join(__dirname,'public')))
+app.get('/*',(req,res)=>{
+  res.sendFile(path.join(__dirname,'public','index.html'))
 })
 mongoose
   .connect(
