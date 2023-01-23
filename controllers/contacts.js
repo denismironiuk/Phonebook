@@ -60,7 +60,7 @@ exports.createPost = async (req, res, next) => {
   const name = req.body.name;
   const email = req.body.email;
   const phone = req.body.phone;
-  const imageUrl = req.file? req.file.path.replace('\\', '/'):'';
+  const imageUrl = req.file? req.file.path.replace('\\', '/'):'https://picsum.photos/seed/picsum/200/300';
   const post = new Post({
     name: name,
     email: email,
