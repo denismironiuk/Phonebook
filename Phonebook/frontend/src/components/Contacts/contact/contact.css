@@ -1,0 +1,52 @@
+.contact-container {
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+
+  justify-content: space-around;
+
+  margin: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.7);
+  position: relative;
+ 
+}
+.favorite-container {
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+}
+
+.contact-container img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+
+  object-fit: cover;
+}
+.contact-container button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+}
+.contact-container i {
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 670px) {
+  .popup {
+    width: 90%;
+  }
+  .contact-container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    
+  }
+}

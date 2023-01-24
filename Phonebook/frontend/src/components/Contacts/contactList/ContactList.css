@@ -1,0 +1,94 @@
+.phonebook  {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem 1rem;
+ 
+  border-radius: 5px;
+  
+}
+.phonebook .phone-list{
+  max-width: 800px;
+  width: 60%;
+  margin-top: 15px;
+ 
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.7);
+}
+.phonebook h2 {
+  text-align: center;
+}
+
+.phonebook section {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+}
+.phonebook section,
+p {
+  padding: 0.5rem;
+}
+
+.phonebook section input {
+  justify-self: left;
+  height: 5vh;
+}
+
+.phonebook section input[type="search"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  outline: 0;
+  height: 1rem;
+}
+.phonebook section input::placeholder {
+  padding: 0.5rem;
+}
+.phonebook .icons i {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+/* 
+@media screen and (max-width: 900px) {
+  .phonebook {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+   
+
+    display: flex;
+  
+  }
+  .phonebook .first {
+    display: flex;
+
+    align-items: flex-start;
+  }
+  .phonebook .first input {
+    align-self: center;
+  }
+  .phonebook .contact-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .phonebook .favorite-container {
+    position: absolute;
+    top: 0;
+  }
+}
+@media screen and (max-width: 550px) {
+
+   .phonebook{
+   
+   }
+  .phonebook .first {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+} */
